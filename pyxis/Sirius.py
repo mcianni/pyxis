@@ -223,7 +223,8 @@ class Sirius(object):
         '''return a dictionary of info about whats currently playing'''
         nowplaying = {}
         channel = None
-        stream = self.__stream['longName'].lower() 
+        stream = self.__stream['longName'].lower()
+        stream = stream.replace("sirius xm", "siriusxm")
         nowPlayingInfo = self.getNowPlaying()
         if stream in nowPlayingInfo:
             channel = stream
